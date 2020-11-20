@@ -8,12 +8,26 @@ class Crowller {
   private  url ='https://github.com/trending';
   async getRawHtml() {
     const result= await got(this.url);
-    console.log(result.body);
-    return result.body;
+    //console.log(result.body);
+    //return result.body;
+    this.getTrendingInfo(result.body);
   }
 
   getTrendingInfo(html:string) {
       const $= cheerio.load(html);
+      const arr:string[] =[];
+      $('.Box div').map((index, element)=>{
+        //console.log('index', index);
+         const desc = $(element).find('.lh-condensed');
+         
+         if(desc.text().length >0){
+            console.log(desc.text().replace(/[\r\n]/g,''));
+         }
+
+      
+      });
+      console.log('arr', arr.length);
+       
 
   }
 
