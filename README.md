@@ -1,4 +1,5 @@
 # scrapGithubTrending
 
-##run
+## run
+
 ts-node index.ts
