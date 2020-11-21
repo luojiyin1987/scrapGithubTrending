@@ -16,12 +16,13 @@ class Crowller {
   getTrendingInfo(html:string) {
       const $= cheerio.load(html);
       const arr:string[] =[];
-      $('.Box div').map((index, element)=>{
-        //console.log('index', index);
-         const desc = $(element).find('.lh-condensed');
+      $('.Box-row').map((index, element)=>{
+         //console.log('index', index);
+         const desc = $(element).find('h1');
          
          if(desc.text().length >0){
             console.log(desc.text().replace(/[\r\n]/g,''));
+           
          }
 
       
