@@ -24,7 +24,12 @@ class Crowller {
             console.log(desc.text().replace(/[\r\n]/g,''));
            
          }
+         const desc1 = $(element).find('.col-9');
+         if(desc1.text().length >0){
+          console.log(desc1.text().replace(/[\r\n]/g,''));
+         }
 
+         console.log('');
       
       });
       console.log('arr', arr.length);
